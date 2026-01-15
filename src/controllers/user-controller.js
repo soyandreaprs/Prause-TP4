@@ -1,6 +1,6 @@
 import UserDTO from "../dtos/user-dto.js";
 import { userService } from "../services/user-service.js";
-import { generateToken } from "../utils/user-utils.js";
+import { generateToken } from "../utils/user-util.js";
 
 class UserController {
   constructor(service) {
