@@ -1,11 +1,15 @@
+import swaggerUI from "swagger-ui-express";
+import swaggerJSDoc from "swagger-jsdoc";
 import express from "express";
 import config from "./config/config.js";
 import { connection } from "./config/database.js";
 import { errorHandler } from "./middlewares/error-handler.js";
+import { info } from "./docs/info.js";
 import router from "./routes/user-routes.js";
 
 const app = express();
 
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(info)))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

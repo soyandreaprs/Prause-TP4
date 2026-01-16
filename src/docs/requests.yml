@@ -1,0 +1,59 @@
+components:
+  schemas:
+
+    Register:
+      type: object
+      required:
+        - name
+        - email
+        - password
+      properties:
+        name:
+          type: string
+          description: User name
+          example: John Johnson
+        email:
+          type: string
+          description: User email
+          example: john@mail.com
+        password:
+          type: string
+          description: User password
+          example: 1234
+          
+    Login:
+      type: object
+      required:
+       - email
+       - password
+      properties:
+        email:
+          type: string
+          description: User email
+          example: john@mail.com
+        password:
+          type: string
+          description: User password
+          example: 1234
+
+    Update:
+      type: object
+      properties:
+        name:
+          type: string
+          description: User name
+          example: John Jonas Johnson
+        email:
+          type: string
+          description: User email
+          example: johnj@mail.com
+        password:
+          type: string
+          description: User password
+          example: 5678
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearer: JWT

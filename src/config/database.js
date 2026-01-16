@@ -16,7 +16,6 @@ export const database = new Sequelize(
 export const connection = async () => {
   try {
     await database.authenticate();
-    await database.sync();
   } catch (error) {
     throw error;
   }

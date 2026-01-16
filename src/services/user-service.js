@@ -10,7 +10,7 @@ class UserService {
   register = async (body) => {
     const { email, password } = body;
     const existingUser = await this.repository.findByEmail(email);
-    if (existingUser) throw new CustomError("Usuario ya registrado", 400);
+    if (existingUser) throw new CustomError("Email already registered", 400);
     const newUser = await this.repository.register({
       ...body,
       password: await hash(password, 10),
@@ -20,15 +20,15 @@ class UserService {
 
   login = async (email, password) => {
     const existingUser = await this.repository.findByEmail(email);
-    if (!existingUser) throw new CustomError("Credenciales inválidas", 401);
+    if (!existingUser) throw new CustomError("Invalid credentials", 401);
     const validPassword = await compare(password, existingUser.password);
-    if (!validPassword) throw new CustomError("Credenciales inválidas", 401);
+    if (!validPassword) throw new CustomError("Invalid credentials", 401);
     return existingUser;
   };
 
   update = async (id, body) => {
     const user = await this.repository.findById(id);
-    if (!user) throw new CustomError("Usuario no encontrado", 404);
+    if (!user) throw new CustomError("User not found", 404);
     if (body.password) {
       body.password = await hash(body.password, 10);
     }
@@ -39,19 +39,19 @@ class UserService {
 
   delete = async (id) => {
     const user = await this.repository.findById(id);
-    if (!user) throw new CustomError("Usuario no encontrado", 404);
+    if (!user) throw new CustomError("User not found", 404);
     await this.repository.delete(id);
   };
 
   findByEmail = async (email) => {
     const user = await this.repository.findByEmail(email);
-    if (!user) throw new CustomError("Usuario no encontrado", 404);
+    if (!user) throw new CustomError("User not found", 404);
     return user;
   };
 
   findById = async (id) => {
     const user = await this.repository.findById(id);
-    if (!user) throw new CustomError("Usuario no encontrado", 404);
+    if (!user) throw new CustomError("User not found", 404);
     return user;
   };
 

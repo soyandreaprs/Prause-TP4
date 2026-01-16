@@ -1,0 +1,41 @@
+components:
+  schema:
+    Users:
+
+      RegisterResponse:
+        type: object
+        properties:
+          message:
+            type: string
+            example: User registered successfully
+
+      LoginResponse:
+        type: object
+        properties:
+          message:
+            type: string
+            example: Login successful
+          token:
+            type: string
+            example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+
+      UpdateResponse:
+        type: object
+        properties:
+          message:
+            type: string
+            example: User updated successfully
+
+      DeleteResponse:
+        type: object
+        properties:
+          message:
+            type: string
+            example: User deleted successfully
+
+      ErrorResponse:
+        type: object
+        properties:
+          error:
+            type: string
+            example: Invalid credentials

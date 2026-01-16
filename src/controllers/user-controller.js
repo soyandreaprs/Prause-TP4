@@ -11,7 +11,7 @@ class UserController {
     try {
       const user = await this.service.register(req.body);
       res.status(201).json({
-        message: "Usuario registrado con éxito",
+        message: "User registered successfully",
         user: new UserDTO(user),
       });
     } catch (error) {
@@ -26,7 +26,7 @@ class UserController {
       const token = generateToken(user);
       res.header("Authorization", `Bearer ${token}`);
       res.status(200).json({
-        message: "Login realizado con éxito",
+        message: "Login successful",
         token,
         user: new UserDTO(user),
       });
@@ -40,7 +40,7 @@ class UserController {
       const { id } = req.params;
       const user = await this.service.update(parseInt(id), req.body);
       res.json({
-        message: "Usuario actualizado con éxito",
+        message: "User updated successfully",
         user: new UserDTO(user),
       });
     } catch (error) {
@@ -52,7 +52,7 @@ class UserController {
     try {
       const { id } = req.params;
       await this.service.delete(parseInt(id));
-      res.json({ message: "Usuario eliminado con éxito" });
+      res.json({ message: "User deleted successfully" });
     } catch (error) {
       next(error);
     }
