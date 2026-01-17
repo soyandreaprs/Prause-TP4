@@ -4,7 +4,7 @@ import express from "express";
 import config from "./config/config.js";
 import { connection } from "./config/database.js";
 import { errorHandler } from "./middlewares/error-handler.js";
-import { info } from "./docs/info.js";
+import { info } from "./d"
 import router from "./routes/user-routes.js";
 
 const app = express();
@@ -23,3 +23,5 @@ connection()
 const PORT = config.PORT;
 
 app.listen(PORT, () => console.log(`Servidor funcionando en puerto ${PORT}`));
+
+export default app;
