@@ -22,6 +22,6 @@ connection()
 
 const PORT = config.PORT;
 
-// app.listen(PORT, () => console.log(`Servidor funcionando en puerto ${PORT}`));
+app.listen(PORT, () => console.log(`Servidor funcionando en puerto ${PORT}`));
 
 export default app;
