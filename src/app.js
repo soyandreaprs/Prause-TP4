@@ -9,6 +9,7 @@ import router from "./routes/user-routes.js";
 
 const app = express();
 
+app.use(cors());
 app.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerJSDoc(info)));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
