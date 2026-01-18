@@ -8,7 +8,7 @@ export const info = {
     },
     servers: [
       { url: "http://localhost:3000" },
-      { url: "https://users.vercel.app" },
+      { url: "https://usersapi.up.railway.app/docs/" },
     ],
   },
   apis: ["./src/docs/*.yml"],
