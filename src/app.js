@@ -20,7 +20,7 @@ connection()
   .then(() => console.log("Conexión a DB con éxito"))
   .catch((error) => console.log(error));
 
-const PORT = config.PORT;
+const PORT = process.env.PORT || config.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Servidor funcionando en puerto ${PORT}`));
 
