@@ -6,7 +6,7 @@ info:
 
 servers:
   - url: http://localhost:3000
-  - url: https://prause-tp4-production.up.railway.app
+  - url: https://usersapi.up.railway.app/docs/
 
 paths:
   /users/register:
