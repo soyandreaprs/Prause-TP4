@@ -11,5 +11,5 @@ export const info = {
       { url: "https://usersapi.up.railway.app/docs/" },
     ],
   },
-  apis: ["./src/docs/*.yml"],
+  apis: ["./src/docs/swagger.yml"],
 };
