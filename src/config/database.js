@@ -8,6 +8,7 @@ export const database = new Sequelize(
   config.DB_PASS,
   {
     host: config.DB_HOST,
+    port: config.DB_PORT,
     dialect: "mysql",
     logging: false,
   }
