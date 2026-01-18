@@ -2,6 +2,7 @@ import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import express from "express";
 import config from "./config/config.js";
+import cors from "cors";
 import { connection } from "./config/database.js";
 import { errorHandler } from "./middlewares/error-handler.js";
 import { info } from "./docs/info.js";
